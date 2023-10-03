@@ -93,9 +93,29 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: 2em;
+	font-size: 64px;
 	margin: 0.67em 0;
 }
+
+/**
+ * Correct the font size and margin on `h2` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h2 {
+	font-size: 48px;
+	margin: 0.67em 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h3 {
+	font-size: 32px;
+	margin: 0.67em 0;
+}
+
+
 
 /* Grouping content
 	 ========================================================================== */
@@ -415,10 +435,16 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: 'Frank Ruhl Libre', serif;
 }
 
 p {
 	margin-bottom: 1.5em;
+}
+
+p, li, a {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
 }
 
 dfn,
