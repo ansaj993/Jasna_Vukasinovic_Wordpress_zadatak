@@ -31,7 +31,8 @@
 		} ;?>
 	
 		<nav id="site-navigation" class="main-navigation">
-			<div class="nav-left">
+			<div class="nav-container">
+				<div class="nav-left">
 				<div class="site-branding">
 					<?php
 					if ( has_custom_logo() ) {
@@ -68,11 +69,13 @@
 						'menu_id'        => 'secondary-menu',
 					)
 				);
+
+				dynamic_sidebar('header-sidebar');
 				?>
+			</div>
 			</div>
 		</nav><!-- #site-navigation -->
 
-		
 		<?php if(is_single()){
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		};?>
