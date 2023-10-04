@@ -93,7 +93,7 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: 64px;
+	font-size: 40px;
 	position: absolute;
     top: 170px;
     left: 0;
@@ -688,8 +688,36 @@ header {
 --------------------------------------------- */
 .main-navigation {
 	position: absolute;
-	top: 27px;
+	top: 0;
 	left: 0;
+	background-color: #C4BC94;
+	width: 100%;
+	padding-left: 20px;
+	z-index: 2;
+}
+
+.nav-left {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.menu-main-menu-container {
+	width: 90%;
+}
+
+.main-navigation img {
+	width: 160px;
+}
+
+.main-navigation button {
+	position: relative;
+	bottom: 3px;
+}
+
+.site-branding {
+	width: 80%;
 }
 
 .main-navigation ul {
@@ -705,6 +733,7 @@ header {
 	margin: 0 15px;
 }
 
+
 .main-navigation ul a:hover {
 	border-bottom: 1px solid white;
 }
@@ -713,11 +742,6 @@ header {
 	position: relative;
 }
 
-.main-navigation .menu-item-has-children > a {
-	padding-right: 15px;
-	margin-left: 15px;
-	margin-right: 0;
-}
 
 .main-navigation .menu-item-has-children::after{
 	content: '\2304';
@@ -730,20 +754,14 @@ header {
 
 .main-navigation .sub-menu {
 	display: block;
-	background-color: #C4BC94;
 }
 
 .main-navigation .sub-menu a {
 	border-bottom: 1px solid #C4BC94;
-}
-
-.main-navigation .sub-menu li:last-child a, .main-navigation .sub-menu li:last-child a:hover {
-	border:none
+	width: 90%;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
 	position: absolute;
 	top: 100%;
 	left: -999em;
@@ -768,6 +786,7 @@ header {
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
+	position: static;
 }
 
 .main-navigation li {
@@ -785,7 +804,17 @@ header {
 	display: block;
 }
 
-@media screen and (min-width: 600px) {
+.menu-toggle {
+	background: transparent;
+	color: white;
+	border: none;
+	padding: 15px;
+}
+
+@media screen and (min-width: 980px) {
+	h1 {
+		font-size: 64px;
+	}
 
 	.menu-toggle {
 		display: none;
@@ -794,16 +823,63 @@ header {
 	.main-navigation ul {
 		display: flex;
 	}
-}
 
-@media screen and (min-width: 980px) {
+	.nav-left {
+		flex-wrap: nowrap;
+		flex-direction: row-reverse;
+		width: 80%;
+		align-items: flex-start;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		position: absolute;
+	}
+
 	.main-navigation {
+		top: 27px;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		padding: 0 200px;
+		padding: 0 10px;
+		background-color: transparent;
+	}	
+
+	.main-navigation img {
+		width: auto;
+	}
+
+	.main-navigation .menu-item-has-children > a {
+		padding-right: 15px;
+		margin-left: 15px;
+		margin-right: 0;
+	}
+
+	.main-navigation .sub-menu {
+		display: block;
+		background-color: #C4BC94;
+	}
+
+	.main-navigation .sub-menu li:last-child a, .main-navigation .sub-menu li:last-child a:hover {
+		border:none;
+	}
+
+	.main-navigation .sub-menu a {
+		width: 200px;
+	}
+
+	.custom-logo-link {
+		padding-top: 5px;
 	}
 }
+
+@media screen and (min-width: 1400px){
+	.main-navigation {
+		justify-content: center;
+		width: 80%;
+	}	
+}
+
 
 .site-main .comment-navigation,
 .site-main
@@ -1062,6 +1138,10 @@ header {
 .post-thumbnail {
 	position: relative;
     height: 400px;
+}
+
+.post-thumbnail img {
+	object-fit: cover;
 }
 
 .post-thumbnail::before {

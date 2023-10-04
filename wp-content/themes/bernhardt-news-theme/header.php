@@ -31,41 +31,45 @@
 		} ;?>
 	
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bernhardt-news-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-
-			<div class="site-branding">
-				<?php
-				if ( has_custom_logo() ) {
-					the_custom_logo();
-				}
-				else {
-					?>
-					<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+			<div class="nav-left">
+				<div class="site-branding">
 					<?php
-				}
-				$bernhardt_news_theme_description = get_bloginfo( 'description', 'display' );
-				if ( $bernhardt_news_theme_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $bernhardt_news_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
+					if ( has_custom_logo() ) {
+						the_custom_logo();
+					}
+					else {
+						?>
+						<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+						<?php
+					}
 
-			<?php wp_nav_menu(
-				array(
-					'theme_location' => 'menu-2',
-					'menu_id'        => 'secondary-menu',
-				)
-			);
-			?>
+					$bernhardt_news_theme_description = get_bloginfo( 'description', 'display' );
+					if ( $bernhardt_news_theme_description || is_customize_preview() ) :
+						?>
+						<p class="site-description"><?php echo $bernhardt_news_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<?php endif; ?>
 
+				</div><!-- .site-branding -->
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#8801;</button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</div>
+			
+			<div class="nav-right">
+				<?php wp_nav_menu(
+					array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'secondary-menu',
+					)
+				);
+				?>
+			</div>
 		</nav><!-- #site-navigation -->
 
 		
