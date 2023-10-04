@@ -53,6 +53,13 @@ function bernhardt_news_theme_setup() {
 		)
 	);
 
+	register_nav_menus(
+		array(
+			'menu-2' => esc_html__( 'Secondary', 'bernhardt-news-theme' ),
+		)
+	);
+
+
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
