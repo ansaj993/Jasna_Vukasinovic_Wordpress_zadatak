@@ -108,9 +108,13 @@ h1 {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h2 {
-	font-size: 48px;
+	font-size: 36px;
 	margin-bottom: 0.67em;
 	margin-top: 0;
+}
+
+.entry-content h2 {
+	margin-top: 50px;
 }
 
 main a {
@@ -126,11 +130,9 @@ main a:visited {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h3 {
-	font-size: 32px;
-	margin: 0.67em 0;
+	font-size: 26px;
+	margin: 30px 0 20px;
 }
-
-
 
 /* Grouping content
 	 ========================================================================== */
@@ -452,19 +454,25 @@ h6 {
 	clear: both;
 	font-family: 'Frank Ruhl Libre', serif;
 	font-weight: 400;
+	line-height: 1.3em;
 }
 
 p {
 	margin-bottom: 1.5em;
 }
 
-p, li, a, .wp-block-image figcaption {
+p, li, a, .wp-block-image, .wp-block-image figcaption {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 }
 
 .wp-block-image figcaption {
 	color: #C4BC94;
+	font-family: 'Frank Ruhl Libre', serif;
+}
+
+.wp-block-image.size-large {
+	margin: 20px 0 18px;
 }
 
 dfn,
@@ -477,7 +485,23 @@ i {
 blockquote {
 	margin: 0 1.5em;
 	color: #C4BC94;
-	line-height: 2.75em;
+	line-height: 2.3em;
+	padding: 40px 0 45px;
+	margin:0;
+	position: relative;
+	border: 2px solid #C4BC94;
+	border-left-width: 0;
+	border-right-width: 0;
+	margin: 40px 0;
+}
+
+blockquote::before {
+	content: url('img/right-quotation-sign.svg');
+	display: block;
+}
+
+blockquote h3 {
+	margin:0;
 }
 
 address {
@@ -530,13 +554,32 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
+ul {
+	list-style: none;
+	margin: 0;
+	padding-left:0px;
 }
 
-ul {
-	list-style: disc;
+.entry-content ul li {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	padding: 10px 0;
+}
+
+.entry-content ul li:before {
+	content: '';
+	display: block;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #C4BC94;
+	margin-right: 12px;
+	margin-top: 9px;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 0;
 }
 
 ol {
@@ -869,6 +912,30 @@ header .wp-block-media-text .wp-block-media-text__content {
 	h1 {
 		font-size: 64px;
 	}
+
+	h2 {
+		font-size: 48px;
+	}
+
+	h3 {
+		font-size: 32px;
+		margin: 50px 0 20px;
+	}
+
+	blockquote {
+		padding: 50px 0 55px;
+		margin: 50px 0;
+		line-height: 2.75em;		
+	}
+
+	
+	:where(.wp-block-columns.is-layout-flex) {
+		gap: 2em;
+	}
+	
+	.wp-block-image.size-large {
+		margin: 50px 0 48px;
+	}	
 
 	.main-navigation {
 		padding-bottom: 0;
@@ -1253,6 +1320,7 @@ header .wp-block-columns {
 
 main {
 	max-width: 1000px;
+	width: 85%;
 	margin: auto;
 	padding: 86px 0;
 }

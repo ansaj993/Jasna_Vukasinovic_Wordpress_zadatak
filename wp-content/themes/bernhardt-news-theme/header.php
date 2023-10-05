@@ -26,9 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'bernhardt-news-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php if(is_single()){
-			bernhardt_news_theme_post_thumbnail();
-		} ;?>
+		<?php bernhardt_news_theme_post_thumbnail();?>
 	
 		<nav id="site-navigation" class="main-navigation">
 			<div class="nav-container">
@@ -76,7 +74,5 @@
 			</div>
 		</nav><!-- #site-navigation -->
 
-		<?php if(is_single()){
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		};?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
 	</header><!-- #masthead -->
