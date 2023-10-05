@@ -653,19 +653,19 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #C4BC94;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background: #C4BC94;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.6em 1em;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #C4BC94;
 }
 
 button:active,
@@ -676,7 +676,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	border-color: #C4BC94;
 }
 
 input[type="text"],
@@ -696,7 +696,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	border: 1px solid #C4BC94;
 	border-radius: 3px;
 	padding: 3px;
 }
@@ -721,7 +721,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 1px solid #C4BC94;
 }
 
 textarea {
@@ -1152,6 +1152,14 @@ header .wp-block-media-text .wp-block-media-text__content {
 
 .bypostauthor {
 	display: block;
+}
+
+.comments-area a, aside a {
+	color: #C4BC94;
+}
+
+.comments-area {
+	margin-top: 50px;
 }
 
 /* Widgets
