@@ -985,7 +985,7 @@ footer p {
 	border-bottom: 1px solid #C4BC94;
 }
 
-footer .widget {
+footer .col {
 	width: 100%;
 }
 
@@ -1054,12 +1054,31 @@ footer h6 {
 	margin: 0;
 }
 
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+	background-color: transparent;
+}
+
+.wp-block-social-links .wp-social-link svg {
+    height: 15px;
+    width: 15px;
+}
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link:hover {
+	color: #C4BC94;
+	transform: scale(1);
+}
+
+.wp-block-social-links .wp-social-link a {
+	padding: 0;
+}
+
 @media screen and (min-width: 600px) {
 	.main-navigation .wp-block-media-text.language {
 		width: 20%;
 	}
 
-	footer .widget {
+	footer .col {
 		width: 33%;
 	}
 }

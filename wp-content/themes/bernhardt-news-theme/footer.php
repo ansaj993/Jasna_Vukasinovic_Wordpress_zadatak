@@ -30,12 +30,29 @@
 			</div>
 
 			<div class="footer-columns">
-				<?php dynamic_sidebar('footer-col-1');?>
-				<?php dynamic_sidebar('footer-col-2');?>
-				<?php dynamic_sidebar('footer-col-3');?>
-				<?php dynamic_sidebar('footer-col-4');?>
-				<?php dynamic_sidebar('footer-col-5');?>
-				<?php dynamic_sidebar('footer-col-6');?>
+				<div class="col col-1">
+					<?php dynamic_sidebar('footer-col-1');?>
+				</div>
+
+				<div class="col col-2">
+					<?php dynamic_sidebar('footer-col-2');?>
+				</div>
+
+				<div class="col col-3">
+					<?php dynamic_sidebar('footer-col-3');?>
+				</div>
+				
+				<div class="col col-4">
+					<?php dynamic_sidebar('footer-col-4');?>
+				</div>
+
+				<div class="col col-5">
+					<?php dynamic_sidebar('footer-col-5');?>
+				</div>
+
+				<div class="col col-6">
+					<?php dynamic_sidebar('footer-col-6');?>
+				</div>
 			</div>
 
 			<div class="footer-bottom">
