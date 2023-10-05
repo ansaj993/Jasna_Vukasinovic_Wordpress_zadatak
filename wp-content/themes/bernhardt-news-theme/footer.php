@@ -12,19 +12,43 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bernhardt-news-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'bernhardt-news-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bernhardt-news-theme' ), 'bernhardt-news-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div class="footer-wrap">
+			<div class="footer-top">
+				<div class="footer-top-content">
+					<h3>Join Our Email List</h3>
+					<p>We're so glad you visited our Web site! And we'd like to stay in touch with you.</p>
+				</div>
+
+				<div class="footer-top-buttons">
+					<button>Consumer</button>
+					<button>to the trade</button>
+				</div>
+			</div>
+
+			<div class="footer-logo">
+				<?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' );?>
+			</div>
+
+			<div class="footer-columns">
+				<?php dynamic_sidebar('footer-col-1');?>
+				<?php dynamic_sidebar('footer-col-2');?>
+				<?php dynamic_sidebar('footer-col-3');?>
+				<?php dynamic_sidebar('footer-col-4');?>
+				<?php dynamic_sidebar('footer-col-5');?>
+				<?php dynamic_sidebar('footer-col-6');?>
+			</div>
+
+			<div class="footer-bottom">
+				<p>
+					<?php
+					/* translators: %s: CMS name, i.e. WordPress. */
+					printf( esc_html__( 'Copyright © 2020 Bernhardt Furniture Company. All Rights Reserved.', 'bernhardt-news-theme' ), 'WordPress' );
+					?>
+				</p>
+
+				<?php dynamic_sidebar('footer-bottom');?>
+			</div><!-- .site-info -->
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

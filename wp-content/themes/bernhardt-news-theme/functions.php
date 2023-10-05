@@ -150,6 +150,90 @@ function bernhardt_news_theme_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 1', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-1',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 2', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-2',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 3', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-3',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 4', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-4',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 5', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-5',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Column 6', 'bernhardt-news-theme' ),
+			'id'            => 'footer-col-6',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Bottom', 'bernhardt-news-theme' ),
+			'id'            => 'footer-bottom',
+			'description'   => esc_html__( 'Add widgets here.', 'bernhardt-news-theme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'bernhardt_news_theme_widgets_init' );
 
