@@ -88,6 +88,10 @@ main {
 	display: block;
 }
 
+.post-categories a {
+	color: #C4BC94;
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -478,6 +482,19 @@ p, li, a, .wp-block-image, .wp-block-image figcaption {
 .wp-block-image figcaption {
 	color: #C4BC94;
 	font-family: 'Frank Ruhl Libre', serif;
+	position: relative;
+	margin-right: 10px;
+}
+
+.wp-block-image figcaption::after {
+	content: "";
+	position:absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #F5F3E8;
+	z-index: -1;
 }
 
 .wp-block-image.size-large {
@@ -1218,7 +1235,7 @@ footer h6 {
 		text-align: left;
 	}
 
-	footer .widget {
+	footer .col {
 		width: auto;
 		text-align: left;
 	}

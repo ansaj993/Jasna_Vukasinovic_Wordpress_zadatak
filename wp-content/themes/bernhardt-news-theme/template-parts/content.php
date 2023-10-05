@@ -19,7 +19,6 @@
 			<div class="entry-meta">
 				<?php
 				bernhardt_news_theme_posted_on();
-				bernhardt_news_theme_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
