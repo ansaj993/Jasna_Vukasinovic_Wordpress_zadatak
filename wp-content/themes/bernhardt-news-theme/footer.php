@@ -20,8 +20,8 @@
 				</div>
 
 				<div class="footer-top-buttons">
-					<button>Consumer</button>
-					<button>to the trade</button>
+					<a href="#" class="btn">Consumer</a>
+					<a href="#" class="btn">to the trade</a>
 				</div>
 			</div>
 
