@@ -95,14 +95,45 @@ article {
 	margin-bottom: 50px;
 }
 
+
 main {
 	max-width: 1518px;
-	padding: 56px 0;
+	padding: 74px 0;
+	position: relative;
+	display: flex;
+	flex-direction: row;
 }
 
-.post-categories a {
-	color: #C4BC94;
+main a {
+	text-decoration: none;
 }
+
+main a:visited, .related-post, .related-post:visited {
+	color: black;
+}
+
+
+/* social icons in main section */
+
+.social-sticky {
+	position: sticky;
+	top: 56px;
+	left: 12px;
+	width: 10%;
+    height: 900px;
+}
+
+.social-sticky .social-icon {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #C4BC94;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -140,14 +171,6 @@ h2 {
 
 .entry-content h2 {
 	margin-top: 50px;
-}
-
-main a {
-	text-decoration: none;
-}
-
-main a:visited, .related-post, .related-post:visited {
-	color: black;
 }
 
 .entry-meta span {
@@ -218,6 +241,10 @@ pre {
  */
 a {
 	background-color: transparent;
+}
+
+.post-categories a {
+	color: #C4BC94;
 }
 
 /**
@@ -832,6 +859,7 @@ textarea {
 --------------------------------------------- */
 header {
 	position: relative;
+	z-index: 1;
 }
 
 header .widget {
@@ -1239,11 +1267,6 @@ footer h6 {
 	main {
 		padding: 86px 0;
 	}
-
-	.related-post-content {
-		padding: 0 30px 30px;
-	}
-
 	
 	.entry-title {
 		top: 246px;
@@ -1433,6 +1456,14 @@ footer h6 {
 		width: 32%;
 		margin-bottom: 0;
 	}
+
+	.related-post-content {
+		padding: 0 30px 30px;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
 
 @media screen and (min-width: 1400px){
@@ -1443,6 +1474,10 @@ footer h6 {
 
 	.nav-left {
 		width: 66%;
+	}
+
+	.related-post-content {
+		height: 250px;
 	}
 }
 

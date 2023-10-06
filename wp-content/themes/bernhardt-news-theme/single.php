@@ -10,57 +10,63 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+		<main id="primary" class="site-main">
+			<div class="social-sticky">
+				<p>Share:</p>
+				<div class="social-icon">
+					<img src="/wp-content/themes/bernhardt-news-theme/img/email.svg" alt="email-icon"/>
+				</div>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			get_template_part( 'template-parts/content', get_post_type() );
+				<div class="social-icon">
+					<img src="/wp-content/themes/bernhardt-news-theme/img/facebook.svg" alt="facebook-icon"/>
+				</div>
 
-			// the_post_navigation(
-			// 	array(
-			// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'bernhardt-news-theme' ) . '</span> <span class="nav-title">%title</span>',
-			// 		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'bernhardt-news-theme' ) . '</span> <span class="nav-title">%title</span>',
-			// 	)
-			// );
+				<div class="social-icon">
+					<img src="/wp-content/themes/bernhardt-news-theme/img/twitter.svg" alt="twitter-icon"/>
+				</div>
 
-			// // If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// 	comments_template();
-			// endif;
+				<div class="social-icon">
+					<img src="/wp-content/themes/bernhardt-news-theme/img/pinterest.svg" alt="pinterest-icon"/>
+				</div>
+			</div>
+			<div class="article-wrap">
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/content', get_post_type() );
 
-		endwhile; // End of the loop.
-		get_sidebar();		
-		
+				endwhile; // End of the loop.
+				get_sidebar();		
+					
 
-	$the_query = new WP_Query(
-		array (
-			'numberposts' => 3,
-			'post__not_in' => array(get_the_ID()) // exclude current post ID
-		)
-	);
+				$the_query = new WP_Query(
+					array (
+						'numberposts' => 3,
+						'post__not_in' => array(get_the_ID()) // exclude current post ID
+					)
+				);
 
-	if($the_query->have_posts()) {
-		echo '<div class="related-posts">';
-		echo '<h2>Similar Posts</h2>';
-		echo '<ul class="related-posts-list">';
-		while($the_query->have_posts()){
-			$the_query->the_post();
-			echo '<li><a href="' . get_post_permalink() . '" class="related-post">' . 
-				'<div class="related-post-thumbnail">' .get_the_post_thumbnail( $post_id, 'custom-post-thumbnail') . '</div>
-				<div class="related-post-content">
-				<p class="entry-meta">' . get_the_date() . '<span>' . get_the_time() .'</span></p>
-				<h4>' . get_the_title() . '</h4>' . 
-				'<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>
-				</a>
-				</div></li>';
-		}
-		echo '</ul>';
-		echo '</div>';
-	}
-	
-	;?>
-	</main><!-- #main -->
-
+				if($the_query->have_posts()) {
+					echo '<div class="related-posts">';
+					echo '<h2>Similar Posts</h2>';
+					echo '<ul class="related-posts-list">';
+					while($the_query->have_posts()){
+						$the_query->the_post();
+						echo '<li><a href="' . get_post_permalink() . '" class="related-post">' . 
+							'<div class="related-post-thumbnail">' .get_the_post_thumbnail( $post_id, 'custom-post-thumbnail') . '</div>
+							<div class="related-post-content">
+							<p class="entry-meta">' . get_the_date() . '<span>' . get_the_time() .'</span></p>
+							<h4>' . get_the_title() . '</h4>' . 
+							'<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>
+							</a>
+							</div></li>';
+					}
+					echo '</ul>';
+					echo '</div>';
+				}
+				
+				;?>
+				</div>
+			</main><!-- #main -->
 <?php
 get_footer();
