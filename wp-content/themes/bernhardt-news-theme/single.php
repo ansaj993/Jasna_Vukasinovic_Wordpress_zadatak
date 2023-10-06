@@ -41,20 +41,22 @@ get_header();
 	);
 
 	if($the_query->have_posts()) {
+		echo '<div class="related-posts">';
 		echo '<h2>Similar Posts</h2>';
-		echo '<ul class="related-posts">';
+		echo '<ul class="related-posts-list">';
 		while($the_query->have_posts()){
 			$the_query->the_post();
 			echo '<li><a href="' . get_post_permalink() . '" class="related-post">' . 
-				'<div class="related-post-thumbnail">' .get_the_post_thumbnail() . '</div>
+				'<div class="related-post-thumbnail">' .get_the_post_thumbnail( $post_id, 'custom-post-thumbnail') . '</div>
 				<div class="related-post-content">
 				<p class="entry-meta">' . get_the_date() . '<span>' . get_the_time() .'</span></p>
 				<h4>' . get_the_title() . '</h4>' . 
-				'<a href="' . get_post_permalink() . '" class="read-more"> Read more →</a>
+				'<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>
 				</a>
 				</div></li>';
 		}
 		echo '</ul>';
+		echo '</div>';
 	}
 	
 	;?>

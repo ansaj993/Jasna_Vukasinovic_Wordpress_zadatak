@@ -293,9 +293,6 @@ function cc_mime_types( $mimes ){
   add_filter( 'upload_mimes', 'cc_mime_types' );
 
 
-function be_exclude_current_post( $args ) {
-	if( is_singular() )
-		$args['post__not_in'] = array( get_the_ID() );
-	return $args;
-}
-add_filter( 'widget_posts_args', 'be_exclude_current_post' );
+//add picture format
+
+add_image_size('custom-post-thumbnail', 460, 460);

@@ -76,6 +76,7 @@
 				</div>
 			</nav><!-- #site-navigation -->
 			
-			<?php the_title( '<h1 class="entry-title">', '</h1>' );
-			}?>
+			<div class="entry-title">
+				<?php the_title( '<h1>', '</h1>' );}?>
+			</div>
 		</header><!-- #masthead -->

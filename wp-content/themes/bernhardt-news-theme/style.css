@@ -92,11 +92,12 @@ main, article {
 
 article {
 	max-width: 1000px;
+	margin-bottom: 50px;
 }
 
 main {
 	max-width: 1518px;
-	padding: 86px 0;
+	padding: 56px 0;
 }
 
 .post-categories a {
@@ -108,15 +109,23 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: 40px;
+	font-size: 32px;
     text-align: center;
     color: white;
 	margin: 0;
+}
+
+.entry-title {
 	position: absolute;
-    top: 236px;
+    top: 150px;
     left: 0;
 	width: 100%;
 	z-index: 1;
+}
+
+.entry-title h1 {
+	width: 80%;
+	margin: 0 auto;
 }
 
 /**
@@ -124,15 +133,9 @@ h1 {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h2 {
-	font-size: 36px;
+	font-size: 28px;
 	margin-bottom: 0.67em;
 	margin-top: 0;
-}
-
-.related-post-thumbnail {
-	display: block;
-	height: 191px;
-	overflow: hidden;
 }
 
 .entry-content h2 {
@@ -156,7 +159,7 @@ main a:visited, .related-post, .related-post:visited {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h3 {
-	font-size: 26px;
+	font-size: 24px;
 	margin: 30px 0 20px;
 }
 
@@ -502,22 +505,27 @@ h3,
 h4,
 h5,
 h6,
-.related-posts h4 {
+.related-posts-list h4 {
 	clear: both;
 	font-family: 'Frank Ruhl Libre', serif;
 	font-weight: 400;
 	line-height: 1.3em;
 }
 
-.related-posts h4 {
+.related-posts-list h4 {
 	margin: 0;
 }
 
-.related-posts .read-more {
+.related-posts-list .read-more {
 	color: #C4BC94;
 	text-transform: uppercase;
 	margin-top: 25px;
 	display: block;
+}
+
+.related-posts h2 {
+	padding: 45px 0 35px;
+	margin: 0;
 }
 
 .entry-meta {
@@ -1071,9 +1079,10 @@ footer .col {
 	border-radius: 0;
 	color: white;
 	text-transform: uppercase;
-	margin-left: 20px;
 	padding: 10px 20px;
 	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 20px;
 }
 
 .footer-top .btn:hover {
@@ -1152,18 +1161,55 @@ footer h6 {
 	padding: 0;
 }
 
-.related-posts {
+.related-posts-list {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
-.related-posts li {
+.related-posts-list li {
 	background-color: #F3F3F3;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.related-posts-list li:hover {
+	background-color: #C4BC94;
+}
+
+.related-posts-list li:hover .related-post-content a {
+	color:white;
+}
+
+.related-post h2 {
+	padding: 85px 0 45px;
+}
+
+.related-post-thumbnail {
+	display: block;
+	height: 190px;
+	overflow: hidden;
+	position: relative;
+}
+
+.related-post-thumbnail img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+	max-width: none;
+}
+
+.related-posts {
+	border-top: 2px solid #C4BC94;
+} 
+
+.related-posts-list li:hover .related-post-thumbnail img {
+    transform: translate(-55%,-30%);
 }
 
 .related-post-content {
-	padding: 0 30px 30px;
+	padding: 0 20px 30px;
 }
 
 @media screen and (min-width: 600px) {
@@ -1174,6 +1220,29 @@ footer h6 {
 	footer .col {
 		width: 33%;
 	}
+
+	.entry-title h1 {
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	.related-posts h2 {
+		padding: 85px 0 45px;
+	}
+
+	.footer-top .btn {
+		margin-left: 20px;
+		margin-bottom: 0;
+	}
+	
+	main {
+		padding: 86px 0;
+	}
+
+	.related-post-content {
+		padding: 0 30px 30px;
+	}
+	
 }
 
 @media screen and (min-width: 980px) {
@@ -1345,12 +1414,13 @@ footer h6 {
 		justify-content: space-between;
 	}
 
-	.related-posts {
+	.related-posts-list {
 		justify-content: space-between;
 	}
 
-	.related-posts li {
+	.related-posts-list li {
 		width: 32%;
+		margin-bottom: 0;
 	}
 }
 
@@ -1640,9 +1710,10 @@ header .wp-block-columns {
     height: 500px;
 }
 
+
 .post-thumbnail img {
     object-fit: cover;
-	object-position: top left;
+	object-position: center 30%;
     width: 100%;
 	height: 100%;
 }
