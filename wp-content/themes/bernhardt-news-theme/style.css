@@ -1198,6 +1198,7 @@ footer h6 {
     left: 50%;
     transform: translate(-50%,-30%);
 	max-width: none;
+	transition: all 0.2s ease-in;
 }
 
 .related-posts {
@@ -1222,7 +1223,7 @@ footer h6 {
 	}
 
 	.entry-title h1 {
-		width: 60%;
+		width: 80%;
 		margin: 0 auto;
 	}
 
@@ -1242,7 +1243,11 @@ footer h6 {
 	.related-post-content {
 		padding: 0 30px 30px;
 	}
+
 	
+	.entry-title {
+		top: 246px;
+	}
 }
 
 @media screen and (min-width: 980px) {
@@ -1351,9 +1356,15 @@ footer h6 {
 	}
 
 	.main-navigation .sub-menu {
-		display: block;
+		max-height: 0;
+		overflow: hidden;
 		background-color: #C4BC94;
-		margin-top: 10px;
+		transition: max-height 0.2s ease-in;
+	}
+
+	.main-navigation:hover .sub-menu {
+		max-height: 500px;
+		background-color: #C4BC94;
 	}
 
 	.main-navigation .sub-menu li:last-child a, .main-navigation .sub-menu li:last-child a:hover {

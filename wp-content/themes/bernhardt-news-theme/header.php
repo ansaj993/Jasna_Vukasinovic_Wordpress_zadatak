@@ -75,7 +75,7 @@
 				</div>
 				</div>
 			</nav><!-- #site-navigation -->
-			
+
 			<div class="entry-title">
 				<?php the_title( '<h1>', '</h1>' );}?>
 			</div>
