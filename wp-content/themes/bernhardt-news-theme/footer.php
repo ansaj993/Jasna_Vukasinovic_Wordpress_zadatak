@@ -56,12 +56,10 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p>
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Copyright © 2020 Bernhardt Furniture Company. All Rights Reserved.', 'bernhardt-news-theme' ), 'WordPress' );
-					?>
-				</p>
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				echo '<p>' . 'Copyright &copy ' . date("Y") . ' Bernhardt Furniture Company. All Rights Reserved.' . '</p>';
+				?>
 
 				<?php dynamic_sidebar('footer-bottom');?>
 			</div><!-- .site-info -->

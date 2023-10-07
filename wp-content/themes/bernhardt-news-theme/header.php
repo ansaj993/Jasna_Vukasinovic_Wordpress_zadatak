@@ -33,46 +33,55 @@
 			<nav id="site-navigation" class="main-navigation">
 				<div class="nav-container">
 					<div class="nav-left">
-					<div class="site-branding">
-						<?php
-						if ( has_custom_logo() ) {
-							the_custom_logo();
-						}
-						else {
-							?>
-							<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+						<div class="site-branding">
 							<?php
-						}
+							if ( has_custom_logo() ) {
+								the_custom_logo();
+							}
+							else {
+								?>
+								<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+								<?php
+							}
 
-						$bernhardt_news_theme_description = get_bloginfo( 'description', 'display' );
-						if ( $bernhardt_news_theme_description || is_customize_preview() ) :
-							?>
-							<p class="site-description"><?php echo $bernhardt_news_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-						<?php endif; ?>
+							$bernhardt_news_theme_description = get_bloginfo( 'description', 'display' );
+							if ( $bernhardt_news_theme_description || is_customize_preview() ) :
+								?>
+								<p class="site-description"><?php echo $bernhardt_news_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+							<?php endif; ?>
 
-					</div><!-- .site-branding -->
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#8801;</button>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
-					);
-					?>
-				</div>
-				
-				<div class="nav-right">
-					<?php wp_nav_menu(
-						array(
-							'theme_location' => 'menu-2',
-							'menu_id'        => 'secondary-menu',
-						)
-					);
+						</div><!-- .site-branding -->
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#8801;</button>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</div>
+					
+					<div class="nav-right">
+						<?php wp_nav_menu(
+							array(
+								'theme_location' => 'menu-2',
+								'menu_id'        => 'secondary-menu',
+							)
+						);?>
 
-					dynamic_sidebar('header-sidebar');
-					?>
-				</div>
+						<div class="search-block">
+							<img src="/wp-content/themes/bernhardt-news-theme/img/icon-search.svg"/>
+							<span>Search</span>
+							
+						</div>
+
+						<?php
+						dynamic_sidebar('header-sidebar');
+						?>
+
+						<?php get_search_form();?>
+					</div>
 				</div>
 			</nav><!-- #site-navigation -->
 

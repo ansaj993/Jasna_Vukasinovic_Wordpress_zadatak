@@ -11,25 +11,23 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php
+		the_category();
+		the_title( '<h2>', '</h2>' );
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			bernhardt_news_theme_posted_on();
-			bernhardt_news_theme_posted_by();
+		if ( 'post' === get_post_type() ) :
 			?>
-		</div><!-- .entry-meta -->
+			<div class="entry-meta">
+				<p>
+					<?php echo get_the_date() . '<span>' . get_the_time() . '</span>';?>
+				</p>
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php bernhardt_news_theme_post_thumbnail(); ?>
-
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<?php the_excerpt();
 
-	<footer class="entry-footer">
-		<?php bernhardt_news_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		echo '<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>';?>
+	</div><!-- .entry-summary -->
 </article><!-- #post-<?php the_ID(); ?> -->

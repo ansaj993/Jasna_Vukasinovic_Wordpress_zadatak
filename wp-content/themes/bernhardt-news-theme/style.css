@@ -156,6 +156,17 @@ h1 {
 	margin: 0;
 }
 
+.search-title {
+	text-align: left;
+	color: black;
+}
+
+.page-header {
+	max-width: 1000px;
+	margin: auto;
+	margin-bottom: 60px;
+}
+
 .entry-title {
 	position: absolute;
     top: 0;
@@ -580,6 +591,40 @@ h6,
 
 p {
 	margin-bottom: 1.5em;
+}
+
+header .widget_block {
+	width: 50%;
+}
+
+.search-block {
+	color: white;
+    width: 50%;
+    font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+    display: flex;
+    justify-content: center;
+	cursor: pointer;
+}
+
+.search-block span {
+	padding-left: 5px;
+}
+
+.search-form-block {
+	position: absolute;
+    top: 100%;
+    padding-top: 10px;
+    left: 0;
+	display: none;
+}
+
+.search-form input {
+	height: 37px;
+}
+
+.search-form-block.active {
+	display: flex;
 }
 
 p, li, a, .wp-block-image, .wp-block-image figcaption {
@@ -1221,6 +1266,7 @@ footer h6 {
 
 .footer-bottom p, .footer-bottom .widget {
 	margin: 0;
+	padding: 0;
 }
 
 
@@ -1379,6 +1425,13 @@ footer .wp-block-social-links .wp-social-link a {
 	right: 10px;
 }
 
+.nav-right {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
 @media screen and (min-width: 600px) {
 	.main-navigation .wp-block-media-text.language {
 		width: 20%;
@@ -1485,6 +1538,10 @@ footer .wp-block-social-links .wp-social-link a {
 		line-height: 2.75em;		
 	}
 
+	.nav-right {
+		width: 23%;
+	}
+
 	:where(.wp-block-columns.is-layout-flex) {
 		gap: 2em;
 	}
@@ -1520,16 +1577,8 @@ footer .wp-block-social-links .wp-social-link a {
 		align-items: flex-start;
 	}
 
-	.nav-right {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 23%;
-
-	}
-
 	header .widget_block {
-		width: 60%;
+		width: 30%;
 	}
 	
 	.main-navigation ul li:hover > ul,

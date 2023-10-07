@@ -6,8 +6,15 @@ btn.addEventListener('click', function(){
     shareInput.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
-    navigator.clipboard.writeText(shareInput.value);
+    document.getSelection().toString(shareInput.value);
 
     // Alert the copied text
     alert("Copied the text: " + shareInput.value);
+})
+
+const search = document.querySelector('.search-block');
+const searchForm = document.querySelector('.search-form-block');
+
+search.addEventListener('click', function(){
+    searchForm.classList.toggle('active');
 })
