@@ -568,6 +568,11 @@ h6,
 	margin: 0;
 }
 
+.related-posts {
+	width: 95%;
+	margin: auto;
+}
+
 .entry-meta {
 	margin-bottom: 0;
 }
@@ -1140,7 +1145,7 @@ footer .col {
 }
 
 .footer-logo {
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
 footer h6 {
@@ -1241,7 +1246,7 @@ footer .wp-block-social-links .wp-social-link a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-30%);
+    transform: translate(-50%,-50%);
 	max-width: none;
 	transition: all 0.2s ease-in;
 }
@@ -1259,10 +1264,6 @@ footer .wp-block-social-links .wp-social-link a {
 }
 
 @media screen and (min-width: 600px) {
-	main {
-		width: 85%;
-	}
-
 	.main-navigation .wp-block-media-text.language {
 		width: 20%;
 	}
@@ -1284,11 +1285,36 @@ footer .wp-block-social-links .wp-social-link a {
 		padding: 86px 0;
 	}
 
+	.related-posts {
+		width: 100%;
+	}
+
+	.related-post-thumbnail img {
+		transform: translate(-50%,-30%);
+	}
+
 	.social-sticky li {
 		width: 40px;
 		height: 40px;
 	}
+
+	.related-posts-list {
+		justify-content: space-between;
+	}
+
+	.related-posts-list li {
+		width: 32%;
+		margin-bottom: 0;
+	}
+
+	.related-post-content {
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
+
 
 @media screen and (min-width: 980px) {
 	h1 {
@@ -1459,30 +1485,13 @@ footer .wp-block-social-links .wp-social-link a {
 		flex-wrap: wrap;
 		padding: 50px 0;
 	}
-	
-	.footer-logo {
-		padding-top: 50px;
-	}
 
 	.footer-bottom, .footer-top {
 		justify-content: space-between;
 	}
 
-	.related-posts-list {
-		justify-content: space-between;
-	}
-
-	.related-posts-list li {
-		width: 32%;
-		margin-bottom: 0;
-	}
-
 	.related-post-content {
 		padding: 0 30px 30px;
-		height: 300px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 	}
 }
 

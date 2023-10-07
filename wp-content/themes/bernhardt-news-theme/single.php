@@ -13,25 +13,26 @@ get_header();
 		<main id="primary" class="site-blog">
 			<div class="article-wrap">
 				<?php get_sidebar();
-				
+
 				while ( have_posts() ) :
 					the_post();
 					get_template_part( 'template-parts/content', get_post_type() );
 
 				endwhile; // End of the loop.
-				get_sidebar();		
-					
-
-				$the_query = new WP_Query(
-					array (
-						'numberposts' => 3,
-						'post__not_in' => array(get_the_ID()) // exclude current post ID
-					)
-				);				
+				get_sidebar();
+				
+				echo get_the_author();
 				;?>
 				</div>
 
 				<?php
+					$the_query = new WP_Query(
+						array (
+							'numberposts' => 3,
+							'post__not_in' => array(get_the_ID()) // exclude current post ID
+						)
+					);	
+
 					if($the_query->have_posts()) {
 						echo '<div class="related-posts">';
 						echo '<h2>Similar Posts</h2>';
