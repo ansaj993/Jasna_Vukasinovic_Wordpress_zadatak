@@ -296,3 +296,24 @@ function cc_mime_types( $mimes ){
 //add picture format
 
 add_image_size('custom-post-thumbnail', 460, 460);
+
+//add additional fields for social network
+
+function custom_user_profile_fields($user_contactmethods) {
+	// Add custom fields
+	$user_contactmethods['linkedin_field'] = 'Linkedin';
+	
+	return $user_contactmethods;
+}
+add_filter('user_contactmethods', 'custom_user_profile_fields');
+
+function save_custom_user_profile_fields( $user_id ) {
+	if ( ! current_user_can( 'edit_user', $user_id ) ) {
+		return false;
+	}
+
+	// Save the values of the custom fields
+	update_user_meta( $user_id, 'linkedin_field', sanitize_text_field( $_POST['linkedin_field'] ) );
+}
+add_action( 'personal_options_update', 'save_custom_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_custom_user_profile_fields' );

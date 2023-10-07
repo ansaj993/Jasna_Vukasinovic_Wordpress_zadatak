@@ -338,7 +338,7 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit;
+	font-family: 'Raleway', sans-serif;
 	font-size: 100%;
 	line-height: 1.15;
 	margin: 0;
@@ -545,7 +545,8 @@ h3,
 h4,
 h5,
 h6,
-.social-sticky p {
+.social-sticky p, 
+.author-image p	{
 	clear: both;
 	font-family: 'Frank Ruhl Libre', serif;
 	font-weight: 400;
@@ -1265,11 +1266,13 @@ footer .wp-block-social-links .wp-social-link a {
 
 .author {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 	background-color: #C4BC94;
 	color: white;
-	padding: 50px;
+	padding: 30px 20px;
+	margin-top: 50px;
+	text-align: center;
 }
 
 .author h3, .description {
@@ -1280,13 +1283,7 @@ footer .wp-block-social-links .wp-social-link a {
 	margin-left: 5px;
 }
 
-.author-image {
-	width: 17%;
-}
-
 .author-bio {
-	width: 83%;
-	padding-left: 30px;
 	line-height: 1.5em;
 }
 
@@ -1298,6 +1295,56 @@ footer .wp-block-social-links .wp-social-link a {
 	border-top: 1px solid white;
 	padding-top: 20px;
 	margin-top: 20px;
+}
+
+.author-social svg {
+	color: white;
+}
+
+.author-social a {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	border: 1px solid white;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+
+.author-image a {
+	margin-bottom: 20px;
+}
+
+.article-share {
+	background-color: #F3F3F3;
+	padding: 30px 50px;
+	margin-top: 50px;
+}
+
+.article-share h3 {
+	margin-top: 0;
+}
+
+.article-share input {
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	padding: 10px;
+	font-size: 14px;
+	border: none;
+	background-color: white;
+	display: block;
+}
+
+.article-share label {
+	position: relative;
+}
+
+.article-share img {
+	position: absolute;
+	bottom: 13px;
+	right: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -1349,6 +1396,22 @@ footer .wp-block-social-links .wp-social-link a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+
+	.author {
+		padding: 50px;
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.author-image {
+		width: 25%;
+	}
+	
+	.author-bio {
+		width: 75%;
+		padding-left: 30px;
+		line-height: 1.5em;
 	}
 }
 
@@ -1505,6 +1568,16 @@ footer .wp-block-social-links .wp-social-link a {
 	.wp-block-gallery::after {
 		background-image: url(img/arrow-right.svg);
 		right: -50px;
+	}
+
+	.author-image {
+		width: 17%;
+	}
+	
+	.author-bio {
+		width: 83%;
+		padding-left: 30px;
+		line-height: 1.5em;
 	}
 
 	footer {
