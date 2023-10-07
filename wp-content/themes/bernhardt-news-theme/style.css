@@ -86,22 +86,25 @@ body {
  */
 main, article {
 	display: block;
-	width: 85%;
 	margin: auto;
 }
 
 article {
 	max-width: 1000px;
 	margin-bottom: 50px;
+	width: 75%;
 }
-
 
 main {
 	max-width: 1518px;
 	padding: 74px 0;
-	position: relative;
+	width: 95%;
+}
+
+.article-wrap {
 	display: flex;
 	flex-direction: row;
+	position: relative;
 }
 
 main a {
@@ -117,15 +120,15 @@ main a:visited, .related-post, .related-post:visited {
 
 .social-sticky {
 	position: sticky;
-	top: 56px;
-	left: 12px;
-	width: 10%;
-    height: 900px;
+	top: 0;
+	left: 0;
+	width: 12%;
+    height: 300px;
 }
 
-.social-sticky .social-icon {
-	width: 40px;
-	height: 40px;
+.social-sticky li {
+	width: 30px;
+	height: 30px;
 	border: 1px solid #C4BC94;
 	border-radius: 50%;
 	display: flex;
@@ -134,7 +137,14 @@ main a:visited, .related-post, .related-post:visited {
 	margin-bottom: 10px;
 }
 
+.social-sticky .wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor svg {
+	color: #C4BC94;
+	font-size: 22px;
+}
 
+.social-sticky .wp-block-social-links .wp-block-social-link:hover {
+	transform: scale(1);
+}
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -148,15 +158,18 @@ h1 {
 
 .entry-title {
 	position: absolute;
-    top: 150px;
+    top: 0;
     left: 0;
 	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
 	z-index: 1;
 }
 
 .entry-title h1 {
 	width: 80%;
-	margin: 0 auto;
+	margin: 70px auto 0;
 }
 
 /**
@@ -532,7 +545,7 @@ h3,
 h4,
 h5,
 h6,
-.related-posts-list h4 {
+.social-sticky p {
 	clear: both;
 	font-family: 'Frank Ruhl Libre', serif;
 	font-weight: 400;
@@ -1064,6 +1077,8 @@ header .wp-block-media-text .wp-block-media-text__content {
 	transform: scale(1.3);
 }
 
+/* Footer */
+
 
 footer {
 	background-image: url(img/Mask\ Group\ 17@2x.png);
@@ -1175,19 +1190,21 @@ footer h6 {
 	background-color: transparent;
 }
 
-.wp-block-social-links .wp-social-link svg {
+footer .wp-block-social-links .wp-social-link svg {
     height: 15px;
     width: 15px;
 }
 
-.wp-block-social-links:not(.is-style-logos-only) .wp-social-link:hover {
+footer .wp-block-social-links:not(.is-style-logos-only) .wp-social-link:hover {
 	color: #C4BC94;
 	transform: scale(1);
 }
 
-.wp-block-social-links .wp-social-link a {
+footer .wp-block-social-links .wp-social-link a {
 	padding: 0;
 }
+
+/* Related posts */
 
 .related-posts-list {
 	display: flex;
@@ -1242,17 +1259,16 @@ footer h6 {
 }
 
 @media screen and (min-width: 600px) {
+	main {
+		width: 85%;
+	}
+
 	.main-navigation .wp-block-media-text.language {
 		width: 20%;
 	}
 
 	footer .col {
 		width: 33%;
-	}
-
-	.entry-title h1 {
-		width: 80%;
-		margin: 0 auto;
 	}
 
 	.related-posts h2 {
@@ -1267,9 +1283,10 @@ footer h6 {
 	main {
 		padding: 86px 0;
 	}
-	
-	.entry-title {
-		top: 246px;
+
+	.social-sticky li {
+		width: 40px;
+		height: 40px;
 	}
 }
 
@@ -1297,9 +1314,12 @@ footer h6 {
 
 	
 	h6 {
-		font-size: 20px;
+		font-size: 14px;
 	}
 
+	.social-sticky {
+		height: 300px;
+	}
 
 	blockquote {
 		padding: 50px 0 55px;
