@@ -245,7 +245,7 @@ function bernhardt_news_theme_scripts() {
 	wp_style_add_data( 'bernhardt-news-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'bernhardt-news-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'bernhardt-news-theme-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
 
 	wp_enqueue_style( 'bernhardt-frank-ruhl-libre', 'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap', array(), _S_VERSION );
 	wp_enqueue_style( 'bernhardt-raleway', 'https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', array(), _S_VERSION );

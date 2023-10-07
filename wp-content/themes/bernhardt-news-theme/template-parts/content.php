@@ -94,7 +94,9 @@
 				<label for="share">
 					<h3>Share this article:</h3>
 					<input type="text" value="https://bernhardt.com/news/press-releases/picture-this" name="share" id="share">
-					<img src="/wp-content/themes/bernhardt-news-theme/img/Icon awesome-copy.svg" alt="copy-icon"/>
+					<div class="share-btn">
+						<img src="/wp-content/themes/bernhardt-news-theme/img/Icon awesome-copy.svg" alt="copy-icon"/>		
+					</div>
 				</label>
 			</div>
 		<?php }; ?>
