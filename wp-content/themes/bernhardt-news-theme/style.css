@@ -1263,6 +1263,43 @@ footer .wp-block-social-links .wp-social-link a {
 	padding: 0 20px 30px;
 }
 
+.author {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background-color: #C4BC94;
+	color: white;
+	padding: 50px;
+}
+
+.author h3, .description {
+	margin: 0;
+}
+
+.author span {
+	margin-left: 5px;
+}
+
+.author-image {
+	width: 17%;
+}
+
+.author-bio {
+	width: 83%;
+	padding-left: 30px;
+	line-height: 1.5em;
+}
+
+.author-bio p {
+	margin-bottom: 0;
+}
+
+.author-description {
+	border-top: 1px solid white;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
 @media screen and (min-width: 600px) {
 	.main-navigation .wp-block-media-text.language {
 		width: 20%;
@@ -1492,6 +1529,11 @@ footer .wp-block-social-links .wp-social-link a {
 
 	.related-post-content {
 		padding: 0 30px 30px;
+	}
+
+	.related-posts {
+		width: 90%;
+		margin: auto;
 	}
 }
 

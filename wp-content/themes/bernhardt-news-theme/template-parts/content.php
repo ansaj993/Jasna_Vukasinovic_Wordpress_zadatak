@@ -42,6 +42,7 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
+
 		} else {
 			the_excerpt();
 			echo '<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>';
@@ -53,8 +54,25 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bernhardt-news-theme' ),
 				'after'  => '</div>',
 			)
-		);
-		?>
+		);?>
+
+		<div class="author">
+			<div class="author-image">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 150); ?>
+			</div>
+
+			<div class="author-bio">
+				<h3 class="author-name">
+					<?php
+					echo get_the_author_meta('first_name');
+					echo '<span>' . get_the_author_meta('last_name') . '</span>';?>
+				</h3>
+
+				<?php echo '<p class="author-nickname">' . get_the_author_meta('nickname') . '</p>';?>
+			
+				<?php echo '<p class="author-description">' . get_the_author_meta('description') . '</p>';?>
+			</div>
+		</div>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

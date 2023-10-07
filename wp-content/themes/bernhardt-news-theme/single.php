@@ -21,7 +21,6 @@ get_header();
 				endwhile; // End of the loop.
 				get_sidebar();
 				
-				echo get_the_author();
 				;?>
 				</div>
 
