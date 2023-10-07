@@ -56,7 +56,7 @@
 			)
 		);
 
-		if(is_singular()){; ?>
+		if(is_singular()); ?>
 			<div class="author">
 				<div class="author-image">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 150); 
@@ -89,17 +89,7 @@
 					<?php echo '<p class="author-description">' . get_the_author_meta('description') . '</p>';?>
 				</div>
 			</div>
-
-			<div class="article-share">
-				<label for="share">
-					<h3>Share this article:</h3>
-					<input type="text" value="https://bernhardt.com/news/press-releases/picture-this" name="share" id="share">
-					<div class="share-btn">
-						<img src="/wp-content/themes/bernhardt-news-theme/img/Icon awesome-copy.svg" alt="copy-icon"/>		
-					</div>
-				</label>
-			</div>
-		<?php }; ?>
+		<?php ; ?>
 		
 	</div><!-- .entry-content -->
 
