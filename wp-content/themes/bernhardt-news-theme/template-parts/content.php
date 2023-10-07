@@ -41,22 +41,8 @@
 					),
 					wp_kses_post( get_the_title() )
 				)
-			);
+			);?>
 
-		} else {
-			the_excerpt();
-			echo '<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>';
-		}
-		
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bernhardt-news-theme' ),
-				'after'  => '</div>',
-			)
-		);
-
-		if(is_singular()); ?>
 			<div class="author">
 				<div class="author-image">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), 150); 
@@ -89,8 +75,31 @@
 					<?php echo '<p class="author-description">' . get_the_author_meta('description') . '</p>';?>
 				</div>
 			</div>
-		<?php ; ?>
+
+			<div class="article-share">
+				<label for="share">
+					<h3>Share this article:</h3>
+					<input type="text" value="https://bernhardt.com/news/press-releases/picture-this" name="share" id="share">
+					<div class="share-btn">
+						<img src="/wp-content/themes/bernhardt-news-theme/img/Icon awesome-copy.svg" alt="copy-icon"/>		
+					</div>
+				</label>
+			</div>
+
+		<?php
+		} else {
+			the_excerpt();
+			echo '<a href="' . get_post_permalink() . '" class="read-more"> Read more &#8594;</a>';
+		}
 		
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bernhardt-news-theme' ),
+				'after'  => '</div>',
+			)
+		);
+?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
